@@ -7,7 +7,6 @@
 # Visit http://www.pragmaticprogrammer.com/titles/elixir16 for more book information.
 #---
 defmodule Parse do
-
   def number([ ?- | tail ]), do: _number_digits(tail, 0) * -1
   def number([ ?+ | tail ]), do: _number_digits(tail, 0)
   def number(str),           do: _number_digits(str,  0)
@@ -20,4 +19,10 @@ defmodule Parse do
   defp _number_digits([ non_digit | _ ], _) do
     raise "Invalid digit '#{[non_digit]}'"
   end
+  def i(x), do: IO.inspect x
+  def p(x), do: IO.puts x
 end
+
+import Parse
+
+p Parse.number('123')

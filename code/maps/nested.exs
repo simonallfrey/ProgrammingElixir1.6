@@ -14,6 +14,12 @@ defmodule BugReport do
   defstruct owner: %Customer{}, details: "", severity: 1
 end
 
+
+defmodule Simon do
+	defstruct a: "", b: "", c: 7
+end
+
+
 defmodule User do
   report = %BugReport{owner: %Customer{name: "Dave", company: "Pragmatic"},
                       details: "broken"}
